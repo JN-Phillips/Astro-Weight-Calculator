@@ -289,8 +289,8 @@ input, select {
 /* For mobile phones */
 @media (max-width: 480px) {
     .linkedin {
-        bottom: 20px;
-        left: 50%;
+        bottom: 30;
+        left: 45%;
         transform: translateX(-50%);
         z-index: 10;
     }
