@@ -289,8 +289,8 @@ input, select {
 /* For mobile phones */
 @media (max-width: 480px) {
     .linkedin {
-        bottom: 30;
-        left: 45%;
+        bottom: 20px;
+        left: 55%; /* Move slightly to the right */
         transform: translateX(-50%);
         z-index: 10;
     }
@@ -302,9 +302,9 @@ input, select {
 
     .floating-video {
         width: 100px;
-        bottom: 100px; /* Adjust this value to ensure it's visible */
+        bottom: 100px;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-40%); /* Adjust to align with button */
         z-index: 9;
     }
 }
@@ -312,6 +312,6 @@ input, select {
 body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
     position: relative;
 }
