@@ -290,8 +290,8 @@ input, select {
 @media (max-width: 480px) {
     .linkedin {
         position: absolute; /* Ensure positioning relative to viewport */
-        bottom: 40px; /* Adjust distance from the bottom */
-        left: 50%;
+        bottom: 60px; /* Adjust distance from the bottom */
+        left: 40%;
         transform: translateX(-50%); /* Center horizontally */
         z-index: 10;
     }
