@@ -286,6 +286,11 @@ input, select {
     }
 }
 
+/* Prevent scrolling on mobile */
+body {
+    overflow: hidden;
+}
+
 /* For mobile phones */
 @media (max-width: 480px) {
     .linkedin {
