@@ -290,24 +290,24 @@ input, select {
 @media (max-width: 480px) {
     .linkedin {
         position: absolute; /* Ensure positioning relative to viewport */
-        bottom: 60px; /* Adjust distance from the bottom */
-        left: 40%;
+        bottom: 10px; /* Adjust distance from the bottom */
+        left: 60%;
         transform: translateX(-50%); /* Center horizontally */
         z-index: 10;
     }
 
     .linkedin-button {
         padding: 8px 16px;
-        bottom: 60px; /* Adjust distance from the bottom */
-        left: 40%;
-        font-size: 14px;
+        bottom: 70px; /* Adjust distance from the bottom */
+        left: 60%;
+        font-size: 28px;
         display: block; /* Make sure it's displayed correctly */
     }
 
     .floating-video {
         position: absolute; /* Ensure positioning relative to viewport */
-        bottom: 50px; /* Adjust distance from the bottom */
-        left: 50%;
+        bottom: 60px; /* Adjust distance from the bottom */
+        left: 60%;
         transform: translateX(-50%); /* Center horizontally */
         width: 100px; /* Adjust width for mobile screens */
         z-index: 9;
