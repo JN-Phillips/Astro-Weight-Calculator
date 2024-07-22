@@ -290,7 +290,7 @@ input, select {
 @media (max-width: 480px) {
     .linkedin {
         bottom: 20px;
-        left: 55%; /* Move slightly to the right */
+        left: 50%;
         transform: translateX(-50%);
         z-index: 10;
     }
@@ -298,13 +298,14 @@ input, select {
     .linkedin-button {
         padding: 8px 16px;
         font-size: 14px;
+        margin-top: -20px; /* Move button up to connect with penguin */
     }
 
     .floating-video {
         width: 100px;
-        bottom: 100px;
+        bottom: 80px; /* Adjust to ensure alignment */
         left: 50%;
-        transform: translateX(-40%); /* Adjust to align with button */
+        transform: translateX(-50%);
         z-index: 9;
     }
 }
