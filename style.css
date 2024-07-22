@@ -1,0 +1,312 @@
+/* Font face */
+@font-face {
+    font-family: 'Montserrat Subrayada';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserratsubrayada/v4/JTUSjIg1_i6t8kCHKm45_XkHkigp07c.woff2) format('woff2');
+}
+
+/* Global styles */
+body {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Heading styles */
+h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Container for centering */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Darken background */
+}
+
+/* Container for form elements */
+.form-container {
+    max-width: 600px; /* Set a smaller max-width */
+    width: 90%; /* Make the container responsive */
+    padding: 20px; /* Add padding inside the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
+    background-color: #ffffff; /* Background color for contrast */
+    border-radius: 10px; /* Rounded corners for the container */
+    margin: 0 auto; /* Center horizontally */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Form styles */
+input, select {
+    width: 100%; /* Full width within the container */
+    padding: 10px; /* Padding inside the form elements */
+    margin-bottom: 20px; /* Space between form elements */
+    border: 2px solid #e9a60b; /* Border styling */
+    border-radius: 4px; /* Rounded corners for form elements */
+    text-align: center; /* Center text inside form elements */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Planet bars */
+.planet-bar {
+    max-width: 60%; /* Ensure it doesn’t stretch beyond its container */
+    margin: 40px; /* Space around the bars */
+    height: 20px; /* Adjust height as needed */
+    background-color: #ff6b6b; /* Example color */
+    border-radius: 10px; /* Rounded corners for bars */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%; /* Adjust container width for smaller screens */
+    }
+}
+
+/* Flashing effect for buttons */
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Shimmering effect for buttons */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Button base styles */
+button {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: 400;
+    color: white;
+    padding: 20px 40px;
+    margin: 10px; /* Add margin for spacing */
+    border-radius: 20px;
+    cursor: pointer;
+    border: none; /* Ensure no border is applied if not specified */
+}
+
+/* Calculate button styles */
+#calculate-button {
+    background: linear-gradient(45deg, #ff6b6b, #f7d08a); /* Red and soft pink gradient */
+    background-size: 200% 100%;
+    color: #fff; /* Text color */
+    padding: 30px 50px;
+    border: 2px solid #999;
+    box-shadow: 
+        8px 8px 25px rgba(0, 0, 0, 0.6),
+        inset 2px 2px 5px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    cursor: pointer;
+    animation: shimmer 2s infinite, flash 1s infinite; /* Apply shimmer and flash */
+}
+
+/* Hover effect for calculate button */
+#calculate-button:hover {
+    background-color: #0067f7; /* Hover effect for calculate button */
+    animation: shimmer 1s infinite, flash 0.5s infinite; /* Faster animation on hover */
+}
+
+/* Play Audio Button styles */
+#playAudioButton {
+    background: linear-gradient(45deg, #ff6b6b, #f7d08a); /* Red and soft pink gradient */
+    background-size: 200% 100%;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    animation: shimmer 2s infinite, flash 1s infinite; /* Apply flashing effect */
+    border: none; /* Remove any default border */
+    text-align: center; /* Center text within the button */
+    display: inline-block;
+}
+
+/* Hover effects for play audio button */
+#playAudioButton:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f7d08a);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite; /* Apply shimmering effect on hover */
+}
+
+/* Video background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    opacity: 0.4; /* Adjust opacity for transparency */
+}
+
+/* Label styling for "Enter your weight on Earth" */
+label {
+    display: block;
+    margin-bottom: 50px;
+    font-size: 42px;
+    text-align: center;
+    font-weight: 700;
+    color: #ff6b6b;
+    text-shadow: 
+        5px 5px 8px rgba(0, 0, 0, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Form styles */
+input, select {
+    position: relative;
+    z-index: 2; /* Ensure both have higher z-index */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #e9a60b;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translate(-50%, -100); /* Start slightly more to the left */
+    }
+    25% {
+        transform: translate(-50%, -200); /* Move up and to the right */
+    }
+    50% {
+        transform: translate(-50%, -100px); /* Move up and center again */
+    }
+    75% {
+        transform: translate(-50%, -150px); /* Move down and to the left */
+    }
+    100% {
+        transform: translate(-50%, -100); /* Return to starting point */
+    }
+}
+
+/* LinkedIn Button Container */
+.linkedin {
+    position: fixed; /* Fixed positioning to stay at the bottom center */
+    bottom: 40px; /* Distance from the bottom of the viewport */
+    left: 49%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    z-index: 2; /* Ensure it's above other content */
+    animation: float 10s infinite; /* Apply the floating animation */
+    text-align: center; /* Center the button horizontally */
+}
+
+/* LinkedIn Button styles */
+.linkedin-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #f7d08a, #ff6b6b); /* Red and soft pink gradient */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+    position: relative; /* Position relative to align with the penguin */
+    bottom: -60px; /* Position the button below the penguin */
+    z-index: 3; /* Ensure it's above the penguin video */
+}
+
+/* Penguin Video Styles */
+.floating-video {
+    position: fixed; /* Fixed positioning to stay at the bottom center */
+    bottom: 90px; /* Distance from the bottom of the viewport */
+    left: 49%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+    width: 150px; /* Width of the floating video */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Ensure it's below the LinkedIn button */
+    animation: float 10s infinite; /* Apply floating effect */
+    border-radius: 20px; /* Apply rounded corners to the video */
+}
+
+/* Apply rounded corners to the video directly */
+#penguin-video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    opacity: 1; /* Ensure full opacity */
+    border-radius: 20px; /* Apply rounded corners directly to the video */
+}
+
+/* Media queries for responsiveness */
+
+/* For tablets */
+@media (max-width: 768px) {
+    .linkedin {
+        bottom: 20px; /* Adjust distance from the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+    }
+
+    .linkedin-button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .floating-video {
+        width: 100px; /* Adjust width for smaller screens */
+        bottom: 70px; /* Adjust distance from the bottom */
+    }
+
+    /* Adjust form container for smaller screens */
+    .form-container {
+        max-width: 90%; /* Reduce max-width to fit smaller screens */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .linkedin {
+        bottom: 10px; /* Adjust distance from the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+    }
+
+    .linkedin-button {
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+        font-size: 12px; /* Adjust font size */
+    }
+
+    .floating-video {
+        width: 80px; /* Adjust width for mobile screens */
+        bottom: 50px; /* Adjust distance from the bottom */
+    }
+
+    /* Adjust form container for mobile screens */
+    .form-container {
+        max-width: 100%; /* Allow full width */
+        padding: 10px; /* Reduce padding */
+    }
+}

@@ -1,12 +1,169 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Weight Calculator</title>
-  </head>
-  <body>
-     <!-- Write your markup here  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Floating Elements</title>
+</head>
+<body>
+    <h1>Astro Weight Calculator</h1>
+    <label for="user-weight">Enter your weight on Earth:</label>
+    <input type="number" id="user-weight">
+    <select id="planets">
+        <option value="Mercury">Mercury</option>
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+        <option value="Mars">Mars</option>
+        <option value="Jupiter">Jupiter</option>
+        <option value="Saturn">Saturn</option>
+        <option value="Uranus">Uranus</option>
+        <option value="Neptune">Neptune</option>
+        <option value="Pluto">Pluto</option>
+        <option value="Moon">Moon</option>
+        <option value="Sun">Sun</option>
+    </select>
+    <button id="calculate-button" onclick="astroCalculator()">Calculate</button>
+    <p id="output"></p>
 
-    <script src="main.js" charset="utf-8"></script>
-  </body>
+    <!-- LinkedIn Button -->
+    <div class="linkedin">
+        <a href="https://www.linkedin.com/in/jessicanphillips" target="_blank" rel="noopener noreferrer" class="linkedin-button">
+            Let's Link Up!
+        </a>
+    </div>
+
+    <!-- Background Space Video -->
+    <video id="myVideo" autoplay muted loop>
+        <source src="./styles/NASA.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Interstellar Audio -->
+    <audio id="myAudio" loop>
+        <source src="./styles/Interstellar.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    <button id="playAudioButton" onclick="playAudio()">Play Audio 🔊🎶</button>
+
+    <!--Penguin1 mp4 Image-->
+    <div class="floating-video">
+    <video autoplay muted loop id="penguin-video">
+        <source src="./styles/penguin1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- YouTube Player -->
+    <div id="youtube-player"></div>
+
+    <!-- Other HTML elements and scripts -->
+    <script src="script.js"></script>
+
+    <!-- Background Video Overlay -->
+    <div class="video-overlay"></div>
+    <video autoplay muted loop class="background-video">
+        <source src="your-video.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <h1></h1>
+        <p></p>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        function astroCalculator() {
+            const weight = +document.querySelector("#user-weight").value;
+            const planet = document.querySelector("#planets").value;
+
+            if (!weight) {
+                return alert("Fun fact: Penguins use pebbles to propose to their mates, however, I cannot propose anything to you without you giving me a weight!");
+            }
+
+            const weightMultipliers = {
+                Mercury: 0.378,
+                Venus: 0.9032,
+                Earth: 1,
+                Moon: 0.1655,
+                Mars: 0.3895,
+                Jupiter: 2.64,
+                Saturn: 1.139,
+                Uranus: 0.917,
+                Neptune: 1.148,
+                Pluto: 0.06,
+                Sun: 27.9,
+            };
+
+            function calculateWeight(earthWeight, multiplier) {
+                return earthWeight * multiplier;
+            }
+
+            let result;
+            const calculatedWeight = calculateWeight(weight, weightMultipliers[planet]);
+
+            if (planet === "Pluto") {
+                result = "If you were on Pluto, your weight would be the heaviness of Pluto's broken heart";
+            } else if (planet === "Sun") {
+                result = `If you were on the Sun, you would weigh ${calculatedWeight.toFixed(0)}lbs!`;
+            } else if (planet === "Jupiter") {
+                result = `If you were on Jupiter, you would weigh ${calculatedWeight.toFixed(0)}lbs!`;
+            } else if (planet === "Mars") {
+                result = `If you were on Mars, you would weigh ${calculatedWeight.toFixed(2)}lbs!`;
+            } else if (planet === "Moon") {
+                result = `If you were on the Moon, you would weigh ${calculatedWeight.toFixed(2)}lbs!`;
+            } else if (planet === "Earth") {
+                result = `If you were on Earth, you would weigh ${calculatedWeight.toFixed(0)}lbs!`;
+            } else if (planet === "Venus") {
+                result = `If you were on Venus, you would weigh ${calculatedWeight.toFixed(2)}lbs!`;
+            } else {
+                result = `If you were on ${planet}, you would weigh ${calculatedWeight.toFixed(1)}lbs!`;
+            }
+
+            document.querySelector("#output").textContent = result;
+        }
+
+        function playAudio() {
+            const audioElement = document.getElementById('myAudio');
+            audioElement.currentTime = 23;
+            audioElement.play().catch(error => {
+                console.error('Playback error:', error);
+            });
+        }
+
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('youtube-player', {
+                height: '0',
+                width: '0',
+                videoId: 'kpz8lpoLvrA',  // Replace with your video ID
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    playlist: 'kpz8lpoLvrA',
+                    start: 20,  // Start at 20 seconds
+                    controls: 0,  // Hide player controls
+                    showinfo: 0,  // Hide video title and uploader info
+                    rel: 0,       // Do not show related videos at the end
+                    mute: 0       // Unmute the video
+                },
+                events: {
+                    'onReady': function() {
+                        player.mute(); // Ensure video is muted
+                    },
+                }
+            });
+        }
+    </script>
+    <script>
+      window.addEventListener('load', function() {
+          var video = document.getElementById('myVideo');
+          video.currentTime = 65; // 1 minute and 5 seconds
+      });
+  </script>
+</body>
 </html>
