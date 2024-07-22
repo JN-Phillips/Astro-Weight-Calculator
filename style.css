@@ -286,32 +286,30 @@ input, select {
     }
 }
 
-/* Prevent scrolling on mobile */
-body {
-    overflow: hidden;
-}
-
 /* For mobile phones */
 @media (max-width: 480px) {
     .linkedin {
-        bottom: 20px; /* More space from the bottom */
-        left: 50%; /* Center horizontally */
+        bottom: 20px; /* Distance from bottom of screen */
+        left: 50%; 
         transform: translateX(-50%);
+        z-index: 10;
     }
 
     .linkedin-button {
-        padding: 8px 16px; /* Slightly larger padding */
-        font-size: 14px; /* Slightly larger font */
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
     .floating-video {
-        width: 100px; /* Slightly larger width */
-        bottom: 80px; /* More space from the bottom */
+        width: 100px;
+        bottom: 80px; /* Adjust to fit within view */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9;
     }
+}
 
-    /* Adjust form container for mobile screens */
-    .form-container {
-        max-width: 90%; /* Slightly less than full width */
-        padding: 15px; /* Moderate padding */
-    }
+/* Prevent scrolling */
+body {
+    overflow: hidden;
 }
