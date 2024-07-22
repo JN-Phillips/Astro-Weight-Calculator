@@ -298,6 +298,8 @@ input, select {
 
     .linkedin-button {
         padding: 8px 16px;
+        bottom: 60px; /* Adjust distance from the bottom */
+        left: 40%;
         font-size: 14px;
         display: block; /* Make sure it's displayed correctly */
     }
