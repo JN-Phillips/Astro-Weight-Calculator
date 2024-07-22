@@ -119,7 +119,7 @@ button {
 /* Hover effect for calculate button */
 #calculate-button:hover {
     background-color: #0067f7; /* Hover effect for calculate button */
-    animation: shimmer 1s infinite, flash 0.5s infinite; /* Faster animation on hover */
+    animation: shimmer 1s infinite, flash 1s infinite; /* Faster animation on hover */
 }
 
 /* Play Audio Button styles */
@@ -163,7 +163,7 @@ video {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    opacity: 0.4; /* Adjust opacity for transparency */
+    opacity: 0.5; /* Adjust opacity for transparency */
 }
 
 /* Label styling for "Enter your weight on Earth" */
@@ -214,7 +214,7 @@ input, select {
 .linkedin {
     position: fixed; /* Fixed positioning to stay at the bottom center */
     bottom: 40px; /* Distance from the bottom of the viewport */
-    left: 49%; /* Center horizontally */
+    right: 9.2%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for exact centering */
     z-index: 2; /* Ensure it's above other content */
     animation: float 10s infinite; /* Apply the floating animation */
@@ -243,7 +243,7 @@ input, select {
 .floating-video {
     position: fixed; /* Fixed positioning to stay at the bottom center */
     bottom: 90px; /* Distance from the bottom of the viewport */
-    left: 49%; /* Center horizontally */
+    right: 10%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for exact centering */
     width: 150px; /* Width of the floating video */
     height: auto; /* Maintain aspect ratio */
@@ -266,7 +266,7 @@ input, select {
 @media (max-width: 768px) {
     .linkedin {
         bottom: 20px; /* Adjust distance from the bottom */
-        left: 50%; /* Center horizontally */
+        right: 10%; /* Center horizontally */
         transform: translateX(-50%); /* Center horizontally */
     }
 
@@ -290,7 +290,7 @@ input, select {
 @media (max-width: 480px) {
     .linkedin {
         bottom: 10px; /* Adjust distance from the bottom */
-        left: 50%; /* Center horizontally */
+        right: 10%; /* Center horizontally */
         transform: translateX(-50%); /* Center horizontally */
     }
 
