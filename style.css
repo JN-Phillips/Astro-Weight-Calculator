@@ -289,24 +289,24 @@ input, select {
 /* For mobile phones */
 @media (max-width: 480px) {
     .linkedin {
-        bottom: 10px; /* Adjust distance from the bottom */
-        right: 10%; /* Center horizontally */
-        transform: translateX(-50%); /* Center horizontally */
+        bottom: 20px; /* More space from the bottom */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%);
     }
 
     .linkedin-button {
-        padding: 6px 12px; /* Adjust padding for smaller screens */
-        font-size: 12px; /* Adjust font size */
+        padding: 8px 16px; /* Slightly larger padding */
+        font-size: 14px; /* Slightly larger font */
     }
 
     .floating-video {
-        width: 80px; /* Adjust width for mobile screens */
-        bottom: 50px; /* Adjust distance from the bottom */
+        width: 100px; /* Slightly larger width */
+        bottom: 80px; /* More space from the bottom */
     }
 
     /* Adjust form container for mobile screens */
     .form-container {
-        max-width: 100%; /* Allow full width */
-        padding: 10px; /* Reduce padding */
+        max-width: 90%; /* Slightly less than full width */
+        padding: 15px; /* Moderate padding */
     }
 }
